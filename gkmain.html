@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Genekeys</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="gkstyle.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<header class="row">
+				<div class="col-md-12">HOLOGENETIC PROFILE</div>
+			</header>
+			<div class="row main">
+				<div class="map col-md-8">
+				<div>
+					<span class="circle" id="greenblue"><span>Life's Work</span><span id="score">56.4</span></span>
+				</div>
+				<div>
+					<span class="circle blue"><span>Pearl</span><span id="score">19.1</span></span>
+				</div>
+				<div>
+					<span class="circle" id="redblue tworow-left"><span>Core</span><span id="score">13.6</span></span>
+					<span class="circle blue tworow-right"><span>Culture</span><span id="score">19.3</span></span>
+				</div>
+				<div>
+					<span class="circle green" id="threerow-left"><span>Radiance</span><span id="score">27.1</span></span>
+					<span class="circle red"><span>SQ</span><span id="score">27.4</span></span>
+					<span class="circle green" id="threerow-right"><span>Evolution</span><span id="score">60.4</span></span>
+				</div>
+				<div>
+					<span class="circle red tworow-left"><span>IQ</span><span id="score">29.4</span></span>
+					<span class="circle red tworow-right"><span>EQ</span><span id="score">51.5</span></span>
+				</div>
+				<div>
+					<span class="circle red"><span>Attraction</span><span id="score">11.3</span></span>
+				</div>
+				<div>
+					<span class="circle" id="redgreen"><span>Purpose</span><span id="score">28.1</span></span>
+				</div>
+				</div>
+				<div class="col-md-4 matches">
+				</div>
+			</div>
+		</div>
+	<script src="js/jquery-1.12.0.min.js"></script>
+ 	<script src="js/bootstrap.min.js"></script>
+ 	<script>
+ 		$('.circle').on('click', function(evt) {
+ 			data = ($(evt.delegateTarget).find('span'));
+ 			quality = data[0];
+ 			score = data[1];
+ 			$('.matches').css("background-color", "#f2f2f2");
+ 			$('.matches').html('');
+ 			$('.matches').append("<h2>Your closest matches on " + quality.textContent + "</h2>");
+ 			$('.matches').append("<h5>User1</h5>");
+ 			$('.matches').append("<h5>User2</h5>");
+ 			$('.matches').append("<h5>User3</h5>");
+ 		});
+ 	</script>
+	</body>
+</html>

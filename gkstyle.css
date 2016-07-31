@@ -1,0 +1,93 @@
+header {
+	font-size: 48px;
+	color: white;
+	background-color:black;
+	margin-bottom: 10px;
+	text-shadow: -4px 4px 3px #f2f2f2;
+}
+
+.row {
+	text-align: center;
+}
+
+.circle {
+	display: inline-block;
+	text-align: center;
+	background-color: #339966;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	animation: enterCircles 2s;
+}
+
+.circle span {
+	display:  inline-block;
+	margin-top: 30px;
+	font-family: Arial, sans-serif;
+}
+
+.circle:hover {
+	transform: scale(1.2);
+	border: 1px solid black;
+}
+
+span #score {
+	display:  block;
+	margin-top: 10px;
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+}
+
+#greenblue {
+	background-image: linear-gradient(#339966, #0099cc);
+	margin-bottom: 40px;
+}
+
+#redblue {
+	background-image: linear-gradient(#0099cc, #ff5050);
+}
+
+#blue {
+	background-color: #0099cc;
+}
+
+.red {
+	background-color: #ff5050;
+}
+
+.green {
+	background-color: #339966;
+}
+
+#redgreen {
+	background-image: linear-gradient(#ff5050, #339966);
+	margin-top: 20px;
+}
+#threerow-left {
+	margin-right: 60px;
+}
+
+#threerow-right {
+	margin-left: 60px;
+}
+
+.tworow-left {
+	margin-right: 40px;
+}
+
+.tworow-right {
+	margin-left: 40px;
+}
+
+@keyframes enterCircles {
+	from {
+		transform: rotate(0) scale(.5);
+	}
+	50% {
+		transform: rotate(-720deg) scale(.5);
+	}
+	to {
+		transform: rotate(0) scale(1);
+	}
+}
