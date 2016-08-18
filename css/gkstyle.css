@@ -23,7 +23,7 @@ header {
 
 .circle span {
 	display:  inline-block;
-	margin-top: 30px;
+	margin-top: 20px;
 	font-family: Arial, sans-serif;
 }
 
@@ -32,23 +32,18 @@ header {
 	border: 1px solid black;
 }
 
-span #score {
-	display:  block;
-	margin-top: 10px;
-	font-family: Arial, sans-serif;
-	font-size: 20px;
-	margin-left: 
-}
-
 span .score {
 	display: block;
-	width: 80%;
+	width: 50%;
 	margin: 0 auto;
 	margin-top: 5px;
 }
 
 .label {
 	display: block;
+}
+.matches {
+	background-color: #f2f2f2;
 }
 
 #greenblue {

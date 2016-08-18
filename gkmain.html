@@ -4,8 +4,8 @@
 		<title>Genekeys</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="gkstyle.css">
-		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="css/gkstyle.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 	</head>
 	<body>
 		<div class="container">
@@ -30,7 +30,7 @@
 					<span class="circle green" id="threerow-right"><span>Evolution</span><input type="text" class="score"></span>
 				</div>
 				<div>
-					<span class="circle red tworow-left"><span class="label">IQ</span><input type="text" class="score"></span>
+					<span class="circle red tworow-left"><span>IQ</span><input type="text" class="score"></span>
 					<span class="circle red tworow-right"><span>EQ</span><input type="text" class="score"></span>
 				</div>
 				<div>
@@ -51,7 +51,6 @@
  			data = ($(evt.delegateTarget).find('span'));
  			quality = data[0];
  			score = data[1];
- 			$('.matches').css("background-color", "#f2f2f2");
  			$('.matches').html('');
  			$('.matches').append("<h2>Your closest matches on " + quality.textContent + "</h2>");
  			$('.matches').append("<h5>User1</h5>");
