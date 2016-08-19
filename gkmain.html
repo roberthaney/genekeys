@@ -52,11 +52,20 @@
  			quality = data[0];
  			score = data[1];
  			$('.matches').html('');
- 			$('.matches').append("<h2>Your closest matches on " + quality.textContent + "</h2>");
- 			$('.matches').append("<h5>User1</h5>");
- 			$('.matches').append("<h5>User2</h5>");
- 			$('.matches').append("<h5>User3</h5>");
+ 			$('.matches').append("<h2>" + quality.textContent + "</h2>");
  		});
+ 		$('.score').on('keypress', function(evt) {
+ 			if (evt.which == 13) {
+ 				$('.matches').append("<h5>Your score: " + this.value + "</h5>");
+ 				findMatches(this.value);
+ 				this.value = '';
+ 			}
+ 		});
+ 		function findMatches(score) {
+ 			 	$('.matches').append("<h5>User1: " + score + "</h5>");
+ 				$('.matches').append("<h5>User2: " + score + "</h5>");
+ 				$('.matches').append("<h5>User3: " + score + "</h5>");
+ 		}
  	</script>
 	</body>
 </html>
