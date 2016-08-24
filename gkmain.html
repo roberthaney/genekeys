@@ -47,24 +47,31 @@
 	<script src="js/jquery-1.12.0.min.js"></script>
  	<script src="js/bootstrap.min.js"></script>
  	<script>
+ 		var profiles = {'Jen Smith': {"Life's Work": 41, 'Pearl': 17, 'Core': 47, 'Culture': 59, 'Radiance': 19, 'SQ': 4, 'Evolution': 34, 'IQ': 62, 'EQ': 28, 'Attraction': 56, 'Purpose': 44}, 'Pablo Escobar': {"Life's Work": 65, 'Pearl': 7, 'Core': 22, 'Culture': 1, 'Radiance': 33, 'SQ': 47, 'Evolution': 2, 'IQ': 63, 'EQ': 1, 'Attraction': 16, 'Purpose': 32}, 'Anita Ekberg': {"Life's Work": 36, 'Pearl': 19, 'Core': 41, 'Culture': 59, 'Radiance': 24, 'SQ': 14, 'Evolution': 39, 'IQ': 17, 'EQ': 16, 'Attraction': 12, 'Purpose': 19}};
+
  		$('.circle').on('click', function(evt) {
- 			data = ($(evt.delegateTarget).find('span'));
- 			quality = data[0];
- 			score = data[1];
+ 			ele = ($(evt.delegateTarget).find('span'));
+ 			sphere = ele[0];
  			$('.matches').html('');
- 			$('.matches').append("<h2>" + quality.textContent + "</h2>");
+ 			$('.matches').append("<h2>" + sphere.textContent + "</h2>");
  		});
  		$('.score').on('keypress', function(evt) {
  			if (evt.which == 13) {
- 				$('.matches').append("<h5>Your score: " + this.value + "</h5>");
- 				findMatches(this.value);
+ 				$('.matches').html('');
+ 				$('.matches').append("<h2>" + sphere.textContent + "</h2>");
+ 				$('.matches').append("<h5>Your key: " + this.value + "</h5>");
+ 				findMatches(this.value, sphere.textContent);
  				this.value = '';
  			}
  		});
- 		function findMatches(score) {
- 			 	$('.matches').append("<h5>User1: " + score + "</h5>");
- 				$('.matches').append("<h5>User2: " + score + "</h5>");
- 				$('.matches').append("<h5>User3: " + score + "</h5>");
+ 		function findMatches(key, sphere) {
+ 			for (var userName in profiles) {
+ 				for (var userSphere in profiles[userName]) {
+ 					if (sphere == userSphere && profiles[userName][userSphere] == key) {
+ 						$('.matches').append("<h5>Match: " + userName + " " + profiles[userName][sphere] + "</h5>");
+ 					}		
+ 				}
+ 			}
  		}
  	</script>
 	</body>
